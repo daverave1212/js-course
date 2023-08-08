@@ -24,12 +24,13 @@
 - Make each lesson stand-alone (e.g. how to run JS without browser page)
 - Put [Optional] in front of some lessons
 
+`dasd`
+
 ## Where to Post
 - Udemy
 - Coursera
 - Skillshare
 - learn.fiverr
-
 
 ## Course Structure
 ## Name:
@@ -345,13 +346,15 @@ So, let's go through it again, line by line, to see how it works:
 - Ok, let's look at the problem. We needmake it stop? Here's how.
 	- Let's say you want to do the sasome thing 910 times. How can we do that? Well, we already know the answer. With a loop, just like before!
 
-`let x = 1
+```
+let x = 1
 while (x <= 9) {
 
 	here we do something that will be done 9 times
 
 	x = x + 1
-}`
+}
+```
 
 - Okay, so how can we alert a mooooo with 9 O's?
 - Let's make an extra variable that will hold the current moo
@@ -492,10 +495,7 @@ Arrays: Length (and Strings)
 Check: is 1 less than 12?
 yes! so we go inside again
 You might be wondering, what do we do if we don't know how many elements there are in an array?
-What if someone gives us this varrayiable but we can't see what is inside?6/10/23, 10:51 PM
-AVOID WORDS:
-https://md2pdf.netlify.app
-16/57
+What if someone gives us this varrayiable but we can't see what is inside?
 We can easily get how many elements are in an array with mikemoneySchoolGrades.length (12,
 because there are 12 elements).
 If you ever have an array and want to find its number of elements, just add .length at the end of its
@@ -545,7 +545,7 @@ Exercise: alert ('yes') if "Daisy" went to the vet, otherwise alert('no')
 break can also be used herein arrays
 Homework:
 We have an array of objects that represents the shopping card of online store: let shoes =
-["Nike", "Puma", etc
+["Nike", "Puma", etc]
 Find out how many Nike shoes are in the shopping cart
 Any questions, feel free to leave me a comment or contact me directly
 
@@ -1886,9 +1886,9 @@ Following that, I will teach you CSS, which is also very easy, but sometimes ann
 ## What is HTML?
 Let's jump straight in to HTML.
 What is HTML? HTML is just another language, which you use to make websites.
-All websites you see online, even this one you're watching the course on, are made with HTML and CSS.
-HTML is used to make the _structure_ of the website, and CSS is used to make the website _look nice_.
-With HTML, you make **boxes**, **images**, **text** and other, while with CSS you give them color, you align them nicely, etc.
+All websites you see online, even this one you're watching the course on, are made with HTML.
+With HTML, you make **boxes**, **images**, **text** and other similar things.
+Later on we will learn CSS, which allows us to change colors, fonts, etc.
 
 Let's take a look at exactly a website: https://brittanychiang.com/, this is a very nice website.
 
@@ -1903,9 +1903,8 @@ First off, make a new folder on your PC. Yes, this time we will actually make it
 In that folder, Right Click > New > Text Document.
 Open it up and now, very importantly, go to File > Save As > change "Save as type" to All Files, and name it mywebpage.html.
 VERY IMPORTANT - make sure it's not `.txt`, but `.html`
-Then hit save. And we can close it.
 
-Now, we have our website file! We can open this in the browser, in Google Chrome or Edge or Firefox or whatever browser we're using!
+Now, we have our website file! We can open this in the browser, in Google Chrome or Edge or Firefox or whatever browser we're using! I recommend Google Chrome.
 Double click on it... aand voila! We have a website!
 Well, it's blank because there's nothing inside, but we'll add a few things.
 
@@ -1914,34 +1913,48 @@ Here is where we write the HTML code of our website.
 
 
 Let's begin with something simple: text. How do we make some text appear on the screen?
+We need to make a box that contains some text.
 Like this:
-`<div>Hello World!</div>`
+
+	<div>Hello World!</div>
+
+Note this slash here.
+
 Go to File > Save (or hit Ctrl + S) and, in the browser, click Refresh.
 Nice, we have the text on our screen!
 
-What this code does is it makes a box, and inside that box, it puts this `Hello World!` text.
+What this code does is it makes a box, and inside that box, it puts this `Hello World!` text. This `<div>` part is the start of the box and this other `</div>` is the end of the box. And the box will contain whatever is inbetween these 2 things.
+
+
 Let's make some more boxes, one under another:
-```<div>Hello World!</div>
-<div>This is HTML</div>
-<div>It's quite alright!</div>```
+
+	<div>Hello World!</div>
+	<div>This is HTML</div>
+	<div>It's quite alright!</div>
+
 And if we refresh the page, here are our texts.
 
-To prove to you these are boxes, I'll open the console, click on this little button right here, then hover over them.
+To prove to you these are boxes, I'll open the inspector [], click on this little button right here, then hover over them.
 There you go - see? Boxes.
-When you write this `<div> </div>`, these are like delimiters of a box.
 
 Well, can we make a box that contains multiple boxes?
 Of course, that's the point!
 Let's first delete everything, then let's make a box:
-`<div>
 
-</div>`
+	<div>
+
+	</div>
+
 Like in JavaScript, spaces and empty lines don't matter. So we can put multile lines of code inside this div box.
-`<div>
-	<div>Hello World!</div>
-	<div>This is HTML</div>
-	<div>It's quite alright!</div>
-</div>`
+It doesn't matter how much space we have between these `<div>` things. We can put 1000 lines of free space, but that will not make the div larger.
+
+
+	<div>
+		<div>Hello World!</div>
+		<div>This is HTML</div>
+		<div>It's quite alright!</div>
+	</div>
+
 Awesome, we have a big box [highlight the div start and end] containing 3 boxes [highlight the 3 other divs].
 Hit File > Save (very important), then open up the browser and refresh the page, and here it is.
 If we hover over them with the inspector tool, we can see that, indeed, it makes a large box containing 3 smaller boxes.
@@ -1950,33 +1963,47 @@ Great!
 And you might be asking yourself: but Dave, how can I make all these boxes be the same size, or fit in the same line?
 Well, you can't. This is all HTML can do. You can change their size and alignment only using CSS.
 
+Even if you put the divs on the same line that doesn't make the boxes on the same line.
+
 Alright, congratulations! That's pretty much all there is to HTML! You now have a master's degree in HTML!
+That's all it is and that's all you need to remember: it's all boxes!
 
 In the next lessons, we will learn how to add images and links.
 
 ## Images
 Alright, how do we add images to html?
+It's very easy.
+
+But first, I want you to make another website, inside a new folder, just to practice making a new website. Pause the video here and make a new site called myphotowebsite.html, inside a new folder.
+
 
 First, let's get an image from the internet.
-I got this beautiful image of a roachdog (search "short black dog"). Save your image in the same folder as `mywebpage.html`.
-So, in our folder, we have `mywebpage.html` and `dog.png`.
+I got this beautiful image of a roachdog (search "short black dog"). Save your image in the same folder as `myphotowebsite.html`.
+So, in our folder, we have `myphotowebsite.html` and `dog.png`.
 
 Now, to add it to our website, let's write some code
 
 Well, it's simple:
 `<img>`
-Note that for `img`, you don't need to close the box with an `</img>`. The `img` is a self-contained box that can't have any other boxes inside.
+Note that for `img`, you don't need to close the box with an `</img>`. The `img` is a box that can't have any other boxes inside.
 
 And how do we connect this `img` to our image in the folder? Simple:
 `<img src="dog.png">`
 And now, if we refresh the page, you can see our image box working!
+
 Okay, some very important things: make sure you spell these right - it's IMG and SRC and make sure you put an arrow here and another arrow here.
 Also make sure these are DOUBLE QUOTES, ok? And finally, make sure you don't forget `.png` here or, if your image is `jpeg` or another format, make sure it matches that format, ok?
 
-Great! Can you change the image size from HTML? No you can't, that's CSS only.
+Great!
+I have a quesiton for you: can you change the image size from HTML?
+What do you think?
+No you can't. As I said previously, that's CSS only. You can't change the size of an image from HTML.
+
+What does src stand for? It stands for source, but, again, we don't care about that. You just need to learn that it's src. That's just the way it is. It's specific to the img.
 
 But I do have a homework for you: make a page with the menu of a restaurant and call it `menu.html`. It should have 3 to 4 items.
 I want you to make a page that has 1. Apple Pie and then an image of the apple pie, then 2. Orange Juice and then an image of orange juice, and so on. Use divs and use images.
+You NEED to do this homework because we will use it in the next lesson.
 Post it in the comments section!
 
 ## Folders
@@ -2001,10 +2028,10 @@ Now, you'll notice that if we refresh the page, the images don't work anymore, a
 
 When we write the SRC part of an img [highlight it], we must tell it where the image is and what its name is.
 To tell it "the applie_pie.png image from the foods folder", we just type `"foods/apple_pie.png"`
-We save it, and now, voila! The web page works again!
+We save it (Control + ), and now, voila! The web page works again!
 Note that this is a normal slash, NOT a backslash. It's a forward slash, ok? Always a forward slash.
 
-Until the next lesson, I'd like you to do the same for thing for all of the images in your restaurant menu. Find some way to separate them. Maybe by high fat or low fat, with or without gluten, etc.
+Until the next lesson, I'd like you to do the same for thing for all of the images in your restaurant menu. Find some way to separate them. Maybe by vegan and non-vegan images, high fat or low fat, with or without gluten, etc.
 See you in the next lesson!
 
 ## Further Folders
@@ -2014,7 +2041,7 @@ I want to show you that you can make folders inside folders, just as you would e
 If I make 2 folders inside my `foods` folder... one called `vegan` and one called `nonvegan` and I put the pie in vegan and the cookies into nonvegan, of course, our images don't work anymore...
 [open notepad] ...because the location of the two images changed.
 We can easily update it by doing another slash here... and... `foods/vegan/apple_pie.png`.
-Alright. Save it.
+Alright. Save it, control + S.
 Now it works!
 
 In the next lesson, we will start using a real code text editor. Stay tuned!
@@ -2026,13 +2053,13 @@ Now we will get what is known as a code editor, which is just a more advanced ve
 The code editor that 90% of all programmers use is Visual Studio Code. Why? Because it's just good.
 Let's get Visual Studio Code.
 
-We go to Google. And we type in `Visual Studio Code` and click on the first link.
+We go to Google. And we type in `Visual Studio Code` and click on the first link. Note: it's Visual Studio CODE. NOT just Visual Studio, but V. S. CODE. Very important, they're different.
 Click on download for windows, and it should download this `.exe` file for you. Click on it.
 And just like installing any other windows app, click on Accept, next, next and Install.
 
 Now you can open Visual Studio Code. Don't be scared by all these options, you don't care about them.
 To start working on your project, go to your website's folder, go back one folder and drag all this folder into Visual Studio Code. Click yes that you trust the authors.
-And now you will see alll the files in this folder on the left side (you can collapse search if it's there).
+And now you will see alll the files in this folder on the left side (you can hide search if it's there).
 Your version of Visual Studio Code might look slightly different, but it works exactly the same.
 
 You can click on any of the files here to see and edit the code.
@@ -2050,12 +2077,13 @@ But you know, a website can have more pages. This `menu.html` thingy is just one
 
 So let's make another page for the special, limited edition offer menu for our restaurant!
 
-Open Visual Studio Code. Right click here below `menu.html` and click New File.
-We make a new page called `specialmenu.html`.
+Open Visual Studio Code. Right click here on the folder click New File.
+That will create a new file in this folder.
+Name it `specialmenu.html`.
 Make sure you don't forget the `.html` part at the end.
 
-And just like with the normal website, we will have a couple of strange items.
-I want you to pause the video here and make this menu. Just think of a couple of items, put them here with a name and an image, just like the previous page.
+And just like with the normal website, we will have a couple of strange foods in here.
+I want you to pause the video here and make this menu. Just think of a couple of menu items, put them here with a name and an image, just like the previous page.
 Pause here and do it.
 
 Alright so while you were working on it, I found a couple of nice images for a cabbage and some peanuts and I added them to the new page.
@@ -2067,18 +2095,25 @@ How do we do that?
 
 It's quite simple: we use the `a` tag:
 `<a>ATTENTION: We have a special limited edition menu! Click here to open the special menu!</a>`
+This will create a box that will open a link when you click on it.
+
 And to make it open another page, we write:
 `<a href="specialmenu.html"...`
-Save, and refresh the page.
+Save with control + S, and refresh the page.
 
 Now, when we click on this, it should get us to the other menu.
-Does it work? Yes t does!
+Does it work? Yes it does!
 
-So, `a` is just a box that, when clicked, redirects you to the page specified in the href.
-Can we make this text a different color? No we can't, that's with CSS.
+So, `a` is just a box that, when clicked, changes the page to the page specified in the href.
+If you want, you can redirect it to a real website, like a youtube video.
+Let's troll people and change the link to Rick Roll.
+
+I have a question for you: can we make this text a different color? What do you think?
+No we can't, that's with CSS.
+
+
 What does A stand for? It stand for anchor, but we don't care about that.
 What does href stand for? It stands for hypertext reference but we don't care about that.
-What does src stand for? It stands for source, but, again, we don't care about that.
 There's really no hidden logic to any of these - this is just the way it is. Same for the images. Images have `SRC` and a's have `HREF`. That's just the way it is.
 
 Just before we get to the next lesson, I want you to know that these _things_, the a, the img, the div with these arrows, these are called tags.
@@ -2094,11 +2129,12 @@ TODO: p tag
 
 So what other tags are there?
 Well, there are a few tags to make text look a bit different, but honestly, they don't really matter because all of the tags I'll show you in this lesson can me made with CSS.
+If you really want to, you're free to skip this chapter or not take any notes, but there are a couple of interesting things here, so just stay with me, ok?
 
 First of, we can make text bold by putting it between B tags:
 Let's add a line to the title that says WELCOME TO OUR RESTAURANT!
 `<b>WELCOME TO OUR RESTAURANT</b>`
-Save, refresh and here it is. B for BOLD.
+Save with Control + S, refresh and here it is. B for BOLD.
 
 In fact, we can use tags inside other text to make it bold.
 Let's take a look here, at our special menu link.
@@ -2106,7 +2142,7 @@ I want to make this "special limited edition" part bold.
 I want you to pause the video here and make this part bold.
 ...........................
 Alright, it should be fairly simple. We just put the "special limited edition" between B tags.
-Save, refresh the page and voila!
+Press Control + S to Save, refresh the page and voila!
 I'll let you guess how we can make some text be in italics instead of bold... hmm I wonder how.
 
 
@@ -2124,26 +2160,39 @@ You can make lists with html.
 Let's add a list of allergens that can be found in our foods. These alergens are eggs, milk, peanuts, sesame and sulphites [write them down].
 You know, things people can be allergic to.
 First, we must define a box for our list:
-`<ul>
 
-</ul>`
+	<ul>
+
+	</ul>
+
 UL stands for unordered list.
 Inside, each list item will be inside a `<li>` tag.
 So let's put our 5 allergens there:
-`<ul>
-	<li>eggs</li>
-	<li>peanuts</li>
-	<li>sesame </li>
-	<li>sulphites </li>
-	<li>milk</li>
-</ul>`
+
+	<ul>
+		<li>eggs</li>
+		<li>peanuts</li>
+		<li>sesame </li>
+		<li>sulphites </li>
+		<li>milk</li>
+	</ul>
+
 Great! If you want numbers instead of these little dots, you can use `<ol>` instead of `ul`.
 Pause the video and try to make a list with `ul` instead of `ol`.
 
 There are some extra cool tags which you can only use with JavaScript, otherwise they don't do anything.
 Like buttons!
+
 `<button>Click Me!</button>`
-This is a button. Does it do anything? Nope. You need JavaScript to make it do something.
+
+This is a button. Does it do anything? Nope. You need JavaScript to make it do something. But, I'll show you a little trick: you can write an "onclick" property on it to make it run some JS code.
+
+	<button onclick="">Click Me!</button>
+
+And in these quotes, you can literally write JS code which will be run when you press the button:
+
+	<button onclick="alert(420)">Click Me!</button>
+
 We also have inputs: `<input>` you can type things in here.
 Also, we have `<textarea>Type anything here.</textarea>`
 And also dropdown menus!
@@ -2154,40 +2203,42 @@ And also dropdown menus!
 </select>`
 And look at that! A nice dropdown menu!
 
-There are other random tags, some of which you will use, others you will never use. There are plenty of tags that in my 7 year experience with HTML I have never used, but they are all very simple and straightforward and, if you want to learn them, you can simply:
+There are other random tags, some of which you will use, others you will never use. There are plenty of tags that in my 8 year experience with HTML I have never used, but they are all very simple and straightforward and, if you want to learn them, you can simply:
 - go to google
 - search for "all html tags"
 - and click on any link
 
 The next lesson is the final lesson of HTML, and I will show you a couple things you should know about HTML, very simple as well.
 
-## HTML Scaffolding of a Page
+## HTML Page Structure and Other Garbage
 In this lesson, I will show you some extra HTML tags that you might see online, but they are not needed. It's just so you know what's up when you see them.
 
-First off, you might see this thing at the start of the HTML code: `<!DOCTYPE html>`. Back in the day in 50 years ago, this used to tell browsers it's an HTML page and not something else. You do not need to put it anywhere, and if you see it, just know it's there to support internet explorer from Windows 98.
+First off, you might see this thing at the start of the HTML code: `<!DOCTYPE html>`. Back in the day 50 years ago, this used to tell browsers it's an HTML page and not something else. You do not need to put it anywhere, and if you see it, just know it's there to support internet explorer from Windows 98.
 
 You will also see the `<html>`, around the whole page, like this.
-Again, this is not needed anymore, you can ommit it.
+Again, this is not needed anymore, you can skip it.
 Another thing you will see is `<body>` covering, again, everything.
 See, this is optional, again.
 
-However, when you open a page, the browser will automatically wrap your whole page in `<html>` and `<body>`, just because it has nothing better to do. They shouldn't affect your HTML code, but they might affect your CSS code when we get into it.
+However, when you open a page, the browser will automatically create the `<html>` and `<body>` boxes, just because it has nothing better to do. They shouldn't affect your HTML code.
 
 Now, I also want to show you one extra important tag which you should have - that's the HEAD tag.
 You usually put the HEAD at the, well, head of the code, as such:
-`<head>
 
-</head>`
+	<head>
+
+	</head>
+
 The head does not contain things that should show in the page, but rather it contains some settings for the page.
 For example, here is where you define a title for your page, here, in the browser's tab:
 `<title>My Restaurant Menu</title>`
-Save, refresh the page, and here it is.
+Press Ctrl + S to Save, refresh the page, and here it is.
 
 You can also define other things, like an icon. Like our title, this will appear in the browser tab, a little image.
 I drew this nice logo of our restaurant, just called `logo.png` which I put directly in the folder or our HTML. Let's add it!
 The code for this is ugly as hell, so bear with me:
 `<link rel="icon" type="image/x-icon" href="logo.ico">`
-You absolutely don't need to memorize this. Whenever you want to add an icon to your website, just look it up on google. I still haven't memorized it.
+You absolutely don't need to memorize this. Whenever you want to add an icon to your website, just look it up on Google. I still haven't memorized it. I always look it up online.
 
 And there are other small settings like these you can add to your page's HEAD, but we'll leave them for later.
 That being said, congratulations! You're an HTML professional now!
@@ -2201,7 +2252,7 @@ I'll see you in the next chapter.
 
 # CSS
 ## Welcome... and Warning
-Hello and welcome to the third chapter of the unusual JavaScript course, zero to hero, for entrepreneurs and freelancers.
+Hello and welcome to the third chapter of this course, zero to hero, for entrepreneurs and freelancers.
 In this chapter, we will learn CSS, which is the language you use to make your website look good.
 
 In the previous chapter, we learned about HTML. We learned that HTML is only used to create the structure of the website. All HTML does is it makes boxes, text, images, etc. But HTML can not tell the website what color boxes should be, or what font, or what the borders of boxes should look, or even how boxes are aligned on the page. This is what CSS does.
@@ -2226,66 +2277,301 @@ First, we create a new HTML tag called `style`
 `<style>
 
 </style>`
-Inside here, we write CSS code. Here we will write all the rules of our page.
-For example, we could say: ALL h2 tags should be green. How do we do that? Let's see:
-`h2`
-Then we write brackets:
-`h2 {
+Inside here, we write CSS code. 
+This style thing won't appear on the page. It's simply a box where we write CSS code.
 
-}`
-And inbetween these brackets we write all the rules and styles and alignments and colors we want ALL the h2's on the page to have:
-`color: green;`
+Here we will write all the rules of our page.
+And rules sound like this: ALL links should be purple. ALL div boxes should have a yellow border. THIS one box should have small text. And so on.
+
+For example, we could say: ALL `a` tags should be green. How do we do that? Let's see:
+
+	a
+
+Then we write brackets:
+
+	h2 {
+
+	}
+
+And inbetween these brackets we write all the rules and styles and alignments and colors we want ALL the a tags on the page:
+
+	color: green;
+
 Important here - colon here and semicolon at the end.
 If you remember from JavaScript, this is similar to a JavaScript object, but not quite.
-Save, refresh, and boom! Now all our H2's have green text!
+Save with control + S, refresh, and boom! Now all our a's have green text!
 
 What else can we do? Background colors!
 Let's make the background color of all H2's purple:
-`background-color: purple;`
+
+	background-color: purple;
+
 Notice the little line here - that's how words in CSS are separated.
 
 What else? Border?
-`border: solid;`
+
+	border: solid;
+
 And we can change the color of the border with... pause the video and try to guess.
-`border-color: red;`
+
+	border-color: red;
 
 Another thing we don't like is that our images are all different sizes.
 So let's change them to all have the same width.
 For that, we need to write some rules for ALL images.
-Pause the video here and try to think of how we'll do that.
+Pause the video here and try to think of how we'll do that. You don't need to write it, just think abot how it would be like.
 
-Well, just like with our h2 rules here, we make some rules for imgs:
-`img {
+Well, just like with our link rules here, we make some rules for imgs:
 
-}`
+	img {
+
+	}
+
 Alright. What could possibly be the rule for width. Hmmm...
-If youy guessed width, you're right!
-`width: 500px;`
+If you guessed width, you're right!
+
+
+	width: 500px;
+
+
 Note the `px` here. This means pixels. My screen, for example, is 1920 pixels wide. We HAVE to specify pixels, because there are also other things we could specify. Like a percentage:
-`width: 50%;`
+
+	width: 50%;
+
+
 This will make the width of each image equal to 50% of its parent's width. Our images have no parent, so their parent is just the page, the body of the page.
 I will let you guess how you can set the height of something. Try to make the height of images also 500px. Pause the video and do it.
 
 What other important properties are there?
 We haven't talked about space much, so here is how you can add space before or after an element.
+
 `margin-top: 100px`
+
 And now, all images have 100px of empty space above them!
 If you guessed that there is margin for left, right and bottom as well, you're right!
+
 `margin-left: 65px;`
 `margin-bottom: 50px;`
+
 So now, notice that our images have 65 pixels of empty space to the left, and then the images themselves occupy 50% of the screen size.
+
+Let's take a look ar our div boxes and give them a gray background so we can see where they start and where they end.
+The text is a bit too close to the edges. How do we give it a padding? It's simple:
+
+	padding-left: 25px;
+
+Of course, we can also add padding-top and padding-bottom.
+You can remember the difference between padding and margin by knowing padding is on the inside and margin is on the outside.
+Padding is basically like when you take a box in real life and you pad it with soft stuff so what is inside doesn't break. Padding inside, margin outside.
+
+There is one last thing I want to show you: borders!
+Let's add a red border to all of our images:
+
+	border-width: 5px;
+	border-color: red;
+	border-style: solid;
+
+If we want to give it round corners, we just go:
+
+	border-radius: 25px;
 
 Aaand that's pretty much about it! That's all CSS is about.
 I know the website looks horrible but bear with me. We'll make it look like this soon. Trust the process.
 In the next lesson, I will teach you how to apply CSS rules to only one or some elements. Cause maybe you only want this image to be larger for some reason, or this h2 to be yellow instead of green. I'll show you in the next lesson!
 
+## CSS Only On Some Elements
+Sometimes you want to have CSS only on one element.
+For example, maybe you want this specific div here to have a gray background, but not all divs, just this one right here.
+
+Well, to do that, you need to give it a class property:
+You simply give it a class property:
+
+	<div class="my-gray-div">
+
+So now, you can write some CSS rules only for my-gray-divs, like this:
+
+	.my-gray-div {
+
+	}
+
+Remember how we do background color?
+It's:
+
+	background-color: gray;
+
+Save (control + S), refresh... and there it is.
+
+This rule that we wrote will apply to ALL things on our page that have this class.
+If we add this class to another div, it will also be gray.
+
+So that's how you can apply CSS only to some elements.
+That's honestly all.
+
+As a homework, I want you to make the text for this specific div to be red. Just this one. Good luck and see you in the next video.
+
+## Boxes On Same Line
+
+[clean project]
+In this lesson, we will learn how to have multiple boxes on the same line.
+So here we have a simple big box, with some simple small boxes inside.
+
+To make them on the same line, the big box must have DISPLAY: FLEX.
+What does DISPLAY: FLEX mean?
+It means we have to give it a DISPLAY: FLEX rule.
+
+Let's give it a class: `class="big-box"` so we only make THIS boX have a DISPLAY FLEX.
+
+So now we go to CSS and we write:
+
+	.big-box {
+		display: flex;
+	}
+
+And now everything inside this box will be on the same line.
+Awesome!
+
+## Flex: Gap, Center
+Just to see the small boxes better, let's make the small boxes have an orange background.
+I want you to do that using classes. Give the small boxes each a class called small box and make them orange with CSS. Pause the video and do that.
+
+Alright, here we are.
+Now we see the boxes much better.
+
+There are a few interesting things you want to do.
+For example, what if you want to have a gap between your elements?
+You do that with a gap property for the big box:
+
+	gap: 20px;
+
+Awesome.
+If you want all elements to be the same width, you need to set their width. Can you remember how to do that and figure it out?
+
+	width: 200px;
+
+And you can see where all of this is going - we're getting closer and closer to making our dream fast food menu page.
+
+[blank page with transition]
+Last thing in this lesson: how do you make a box centered on the screen?
+The truth is, there are multiple ways to do it, but I will show you the best way to do it:
+
+Let's say we have a black box, with a size, and we want it to be on the middle of the screen.
+
+Step 1.
+We need to put it inside another bigger box with the width equal to the entire screen.
+
+	<div class="bigger-box">
+		...
+	</div>
+
+	.bigger-box {
+		width: ...
+	}
+
+To cover the entire screen width, what do you think we will put here?
+Exactly: 100%
+And to see it truly covers the entire screen, let's give it a background color...
+You don't need to give it a height, because it automatically has a height equal to whatever is inside.
+
+So now, to have whatever is inside be on the center, we first must give the big box a DISPLAY: FLEX and a justify-content: center:
+
+	justify-content: center;
+
+
+Hit control + S to save, and let's refresh the page.
+There you have it - that's how you center things on the screen.
+
+If you want, you can play with this. You can have boxes centered inside boxes that are not centered that are inside centered boxes and so on.
+
+
+
+Now, I know what you're thinking: how do you center it also vertically?
+My answer to that is - it's tricky. And I want you to know one very important thing about CSS:
+CSS is NOT made for you to center things vertically. You're free to play with 100% width and center things horizontally, like here, but vertically (indicate with the mouse), that's tricky.
+Yes sometimes you want to, but you should avoid centering things vertically like the plague. Try not to do that, because that's what CSS is really bad at.
+
+But if you really want to, you can simply set the height of the bigger box to something in pixels:
+
+	height: 350px;
+
+And also give it an align-items: center:
+
+	align-items: center;
+
+Save, refresh. There it is.
+
+Now, what if you want to make it perfectly centered on the screen?
+Your first thought is probably to give it a 100% height.
+Well, that doesn't work [try it].
+Why doesn't it work? No one really know. It just doesn't work and you should know that.
+
+
+## Pitfalls (IMPORTANT)
+This is a very important lesson and I'll explain some things about CSS that you MUST know.
+
+#### Put This Code Everywhere
+First off, I will give you some CSS code to put on EVERY web page. This code will save you so much headache.
+
+[css memes]
+Sometimes, elements on the page will glitch and go one through another, or be misaligned, or not work at all.
+That is because CSS is an old language that came with a lot of problems.
+To avoid those problems, just put this code on your page.
+You don't need to know what it does for now, but just trust me on this one, it will save you so much headache.
+In my personal projects, I always add this code to all of my pages. It won't break anything, it will just fix things.
+Save this code and put it everywhere and you will thank me later.
+
+#### Also This
+Here's another piece of code you should probably put on every page.
+If your page is only supposed to scroll down, then put this on your page.
+Sometimes your page will get bugged and display a scrollbar here, which will make your page scroll to the right and be completely misaligned.
+IF you do NOT want your page to have a scrollbar down here, put this on your page and thank me later.
+
+#### Working With Height
+Next, like I already said, CSS doesn't really like working with vertical things. If you're working with 100% height, be extra careful because it can break.
+
+
+## Starting Our Project
+For this chapter, we will start actually building the website we have in the picture.
+Our website is a restaurant menu as well.
+We will start from scratch, from 0.
+
+We will only have one page on our site.
+
+To start this out, I want you to create a new folder for this project and create a new page called fastfoodmenu.html, just like I taught you.
+Do this again to familiarise yourself with starting a new project.
+Pause the video and do that now.
+
+Okay, I'll quickly do that here as well.
+New folder, drag and drop it to VSCode, right click on it > new File, fastfoodmenu.html.
+
+Done, now we can begin writing code.
+We open this in the browser and we currently have nothing on our page.
+
+Well that is about to change.
+We will look at all of these one by one - the title, the background, these images, etc and we will make them one by one.
+
+Before we start doing it, I want you to find 6 similar images to these ones: one for a big burger, one for a pizza, for a kebab, and so on.
+And I want you to put them in a folder called `images`.
+
+
+### Starting Out
+Before we begin, I want you to be sure we have the same file structure.
+Here's our fastfoodmenu.html file.
+And near it there's a folder called images with a small `i`.
+Inside, we have some random pictures.
+
+Here's the plan: we will build our website little by little with HTML and CSS. For every new thing we don't know, we will google how to do it together.
+Googling is a very important part of being a programmer.
+As a programmer, you will google A LOT. And I mean A LOT.
+We programmers google things all the time, there's absolutely no escaping it.
+You WILL need to use google and search for how to do new things. There's just no way around that. That's the truth.
+
+
+Googling... (w3schools mostly)
+
+
 ## If it doesn't work...
 - Semicolons?
 - px?
-
-## Pitfalls (IMPORTANT)
-
-
 
 
 Menus: https://marketplace.canva.com/EAFJgMSOsNY/1/0/1131w/canva-red-and-yellow-modern-fast-food-menu-8KbN0csxDcE.jpg
