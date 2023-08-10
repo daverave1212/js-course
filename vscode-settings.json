@@ -1,0 +1,29 @@
+    "editor.tokenColorCustomizations": {
+        "textMateRules": [
+            {
+                "scope": [
+                    "markup.heading.markdown",
+                    "entity.name.section.markdown"
+                ],
+                "settings": {
+                    "foreground": "#cca2fd"  // Customize the color
+                }
+            },
+            {
+                "scope": "punctuation.definition.heading.markdown",
+                "settings": {
+                    "foreground": "#cca2fd"  // Customize the color of the hashtag
+                }
+            },
+            {
+                "scope": [
+                    "markup.inline.raw.string.markdown",
+                    "string.other.link.title.markdown",
+                    "string.other.link.description.markdown"
+                ],
+                "settings": {
+                    "foreground": "#f2eccd"  // Code block foreground color
+                }
+            }
+        ]
+    }
