@@ -50,9 +50,10 @@
 	- Made so even the most beginner people who have never seen code in their life will understand
 	- I was disappointed with other courses online as they always assumed the viewer already knows some things, have ambiguous explenations, are inconsistent or overload the learner with information they don't need
 	- This course will teach you strictly the minimum necessary you need to build big application, real life code and I will take you from zero to hero. I will give you both simple practice exercises and exercises that are real use cases for that lesson, problems that programmers encounter in the real world. 
+	- I will also teach you how to host your apps and websites, deploy them to Google play, and even host your databases, all for free
 - By the end of this course, you will be able to build applications like this... or like this...
 - Why JavaScript?
-	- Also youll learn other languages easier
+	- Also you'll learn other languages easier
 - Questions? How you can contact me
 - I can't wait to get started!
 
@@ -1961,9 +1962,9 @@ If we hover over them with the inspector tool, we can see that, indeed, it makes
 Great!
 
 And you might be asking yourself: but Dave, how can I make all these boxes be the same size, or fit in the same line?
-Well, you can't. This is all HTML can do. You can change their size and alignment only using CSS.
-
+When you make boxes with `div`, they will always be under eachother.
 Even if you put the divs on the same line that doesn't make the boxes on the same line.
+There are ways to put them on the same line, but you need CSS to do that.
 
 Alright, congratulations! That's pretty much all there is to HTML! You now have a master's degree in HTML!
 That's all it is and that's all you need to remember: it's all boxes!
@@ -1981,7 +1982,7 @@ First, let's get an image from the internet.
 I got this beautiful image of a roachdog (search "short black dog"). Save your image in the same folder as `myphotowebsite.html`.
 So, in our folder, we have `myphotowebsite.html` and `dog.png`.
 
-Now, to add it to our website, let's write some code
+Now, to add it to our website, let's write some code.
 
 Well, it's simple:
 `<img>`
@@ -2005,6 +2006,42 @@ But I do have a homework for you: make a page with the menu of a restaurant and 
 I want you to make a page that has 1. Apple Pie and then an image of the apple pie, then 2. Orange Juice and then an image of orange juice, and so on. Use divs and use images.
 You NEED to do this homework because we will use it in the next lesson.
 Post it in the comments section!
+
+## Images Are Inline
+Very quick tip:
+Maybe doing the homework you realized that if you put 2 images one after another, they will not be under eachother, but on the same line.
+That's kind of strange, but I will show you why it's like this: it's easy to work with emojis and put images inbetween words when you have text.
+
+Let's say we have a box with some text:
+
+	<div>Hello dear reader! Welcome!</div>
+
+I found this image of a goose online. It's just a very small png image.
+What I can do is add this `img` directly inside the text:
+
+	<div>Hello dear reader! <img src="goose.png"> Welcome!</div>
+
+And voila! So remember this: by default, images are inline.
+
+If you want to have multiple images one after another, you can simply put each image inside a `div` box.
+Let's say we have 3 images of a goose:
+
+	<img src="goose.png">
+	<img src="goose.png">
+	<img src="goose.png">
+
+These are displayed on the same line.
+If you want to have them on separate lines, you can put each `img` inside its own div:
+
+	<div>
+		<img src="goose.png">
+	</div>
+	<div>
+		<img src="goose.png">
+	</div>
+	<div>
+		<img src="goose.png">
+	</div>
 
 ## Folders
 I hope you did your homework from the last lesson, because we're going to use that project.
@@ -2072,7 +2109,34 @@ And that's it, really. You will see, Visual Studio Code will help you in many wa
 From now on, we will work using Visual Studio Code and in the next lesson, we will learn about links.
 
 ## Links
-[folder open] We have our nice little restaurant menu website.
+[code open] We have our nice little restaurant menu website.
+You surely know that on websites, you always see links to other websites.
+Text that is blue and when you click on it, it opens a different website or a different page of the same site.
+
+Links to other websites are quite simple to do.
+Let's add some text that reads:
+`Click here to view the cabbage recipe`.
+Hit Ctrl + S to save.
+Right now, this is just some text. We want it to open a youtube link with the recipe for the cabbage.
+It's quite simple to do: we use an `a` tag.
+`<a>Click here to view the cabbage recipe</a>`
+This will create a box that will open a link when you click on it.
+
+And to make it open another page, we write:
+`<a href="youtube.com/..."...`
+Save with control + S, and refresh the page.
+
+Now, when we click on this, it should get us to the youtube tutorial for the cabbage.
+Does it work? Yes it does!
+
+So, `a` is just a box that, when clicked, changes the page to the page specified in the `href` property.
+
+You can even put the `a` only around the `here` word:
+`Click <a>here</a> to view the cabbage recipe`
+As you can see, like the images, the `a` boxes are inline with text. That makes it easy to use!
+
+## Pages
+
 But you know, a website can have more pages. This `menu.html` thingy is just one page. We can make more pages, and we can tie them together!
 
 So let's make another page for the special, limited edition offer menu for our restaurant!
@@ -2093,20 +2157,7 @@ We want, at the top of our page, to have a text that says `ATTENTION: We have a 
 And if we click on that text, it should open the `specialmenu.html` page.
 How do we do that?
 
-It's quite simple: we use the `a` tag:
-`<a>ATTENTION: We have a special limited edition menu! Click here to open the special menu!</a>`
-This will create a box that will open a link when you click on it.
-
-And to make it open another page, we write:
-`<a href="specialmenu.html"...`
-Save with control + S, and refresh the page.
-
-Now, when we click on this, it should get us to the other menu.
-Does it work? Yes it does!
-
-So, `a` is just a box that, when clicked, changes the page to the page specified in the href.
-If you want, you can redirect it to a real website, like a youtube video.
-Let's troll people and change the link to Rick Roll.
+...
 
 I have a question for you: can we make this text a different color? What do you think?
 No we can't, that's with CSS.
@@ -2354,6 +2405,8 @@ If you guessed that there is margin for left, right and bottom as well, you're r
 `margin-bottom: 50px;`
 
 So now, notice that our images have 65 pixels of empty space to the left, and then the images themselves occupy 50% of the screen size.
+Notice we don't use margin-right. We only have top, left and bottom and that is because everything, by default, is left to right. I'm sorry if you speak Arabic or Hebrew, but it's all left to right.
+There is also `margin-right`, but it won't do anything in our case.
 
 Let's take a look ar our div boxes and give them a gray background so we can see where they start and where they end.
 The text is a bit too close to the edges. How do we give it a padding? It's simple:
@@ -2504,7 +2557,6 @@ Your first thought is probably to give it a 100% height.
 Well, that doesn't work [try it].
 Why doesn't it work? No one really know. It just doesn't work and you should know that.
 
-
 ## Pitfalls (IMPORTANT)
 This is a very important lesson and I'll explain some things about CSS that you MUST know.
 
@@ -2529,7 +2581,7 @@ IF you do NOT want your page to have a scrollbar down here, put this on your pag
 Next, like I already said, CSS doesn't really like working with vertical things. If you're working with 100% height, be extra careful because it can break.
 
 
-## Starting Our Project
+# HTML + CSS Project
 For this chapter, we will start actually building the website we have in the picture.
 Our website is a restaurant menu as well.
 We will start from scratch, from 0.
@@ -2553,17 +2605,91 @@ Before we start doing it, I want you to find 6 similar images to these ones: one
 And I want you to put them in a folder called `images`.
 
 
-### Starting Out
+## Starting Out
 Before we begin, I want you to be sure we have the same file structure.
 Here's our fastfoodmenu.html file.
-And near it there's a folder called images with a small `i`.
+And near it there's a folder called `images` with a small `i`.
 Inside, we have some random pictures.
 
-Here's the plan: we will build our website little by little with HTML and CSS. For every new thing we don't know, we will google how to do it together.
+Here's the plan: we will build our website little by little with HTML and CSS.For every new thing we don't know, we will google how to do it together.
 Googling is a very important part of being a programmer.
 As a programmer, you will google A LOT. And I mean A LOT.
 We programmers google things all the time, there's absolutely no escaping it.
 You WILL need to use google and search for how to do new things. There's just no way around that. That's the truth.
+
+Alright, first things first: we make a style tag and put that CSS code that I gave you to fix issues in it.
+
+We have a blank page.
+
+## Background Color
+Let's begin by setting the background color of the page and make it brown.
+Do you remember how the browser covers all of our code inside a `<body>` tag?
+`<body>` is just a box that contains all of our page. You don't see it here, because it is added automatically by the browser.
+So to set the background color of our page to brown, we need to set the background color of the body to brown.
+Pause the video and write a CSS rule for that.
+
+	body {
+		background-color: brown;
+	}
+
+Awesome, it works.
+But this color is not exactly what we need. The brown of our page is slightly different.
+How do we set an exact color?
+Here's how.
+
+## Exact Colors
+In computers, there are 3 primary colors: Red, Green and Blue.
+All the colors you've ever seen on your monitor are combinations of Red, Green and Blue.
+[Slide] Yellow is Red + Green.
+[Slide] Purple is Red + Blue.
+
+To choose an exact color, you need to specify the exact combination of how much Red you want, how much Green you want and how much Blue you want on a scale from 0% to 100%.
+
+[Slide] 100% Red + 100% Green + 0% Blue = Yellow
+[Slide] 50%... 0%... 80%...
+
+Let me show you how to set a custom color.
+Instead or `brown`, let's set the color to a unique yellow:
+
+	rgb()
+
+Yellow, as I said, is 100% red, 100% green and 0% blue:
+
+	rgb(100%, 100%, 0%);
+
+So, this first 100% represents how much red you want, in that color, this second 100% is how much green you want and the last one is how much blue you want.
+
+We can lower the green here to make it more towards red. And make sure you put the % sign (that is Shift + 5). Otherwise, it's not going to work properly.
+
+Just so you know, 0% in all 3 means black, and 100% in all 3 means white. No colors means black, all colors means white.
+I want you to pause the video right now and try out a few combinations of red, green and blue. Try to get this exact color we have on our inspiraiton photo here.
+
+
+I wanted to get you used to working with RGB, but there's a cute trick in our text editor here.
+If you hover over this little square, it will open this color picker, and you can just click anywhere on this color picker to choose your color, and it will automatically write the combination for that color here.
+
+## Display Types
+Next up is the paint splash in the corner here.
+There is no spcecial effect or trick for this. It's just an image.
+
+So we're going to go to Google, find an image of a paint splash and download it and put it in our website folder with the name splash.png.
+Make sure it has a transparent background.
+An image can only have a transparent background if it's a PNG. JPEG, WEBP, GIF these can't have transparency.
+
+How do we put it in the upper-right corner here? Try to guess.
+We use something we've already learned.
+
+Yes, we use `margin-left` and we can put it to 80%.
+Let's give our image a class so we can easily make rules for it in CSS...
+
+	.splash-image {
+		margin-left: 80%;
+	}
+
+Now the image will have a space to the left equal to 80% of our screen.
+I quite like that.
+
+
 
 
 Googling... (w3schools mostly)
