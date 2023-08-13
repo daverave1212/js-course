@@ -2441,6 +2441,10 @@ You simply give it a class property:
 
 	<div class="my-gray-div">
 
+From now on, this div will be named "my-gray-div".
+In CSS, we are not allowed to use spaces for classes, so we use little lines. This is a minus sign.
+If you want, you _CAN_ use underscores, but, like in JavaScript, web developers really, really don't like underscores. So, for CSS, if you have multiple words, you separate them with a minues.
+
 So now, you can write some CSS rules only for my-gray-divs, like this:
 
 	.my-gray-div {
@@ -2455,7 +2459,8 @@ It's:
 Save (control + S), refresh... and there it is.
 
 This rule that we wrote will apply to ALL things on our page that have this class.
-If we add this class to another div, it will also be gray.
+If we add this class to another div, it will also be gray [show this].
+
 
 So that's how you can apply CSS only to some elements.
 That's honestly all.
@@ -2668,7 +2673,7 @@ I want you to pause the video right now and try out a few combinations of red, g
 I wanted to get you used to working with RGB, but there's a cute trick in our text editor here.
 If you hover over this little square, it will open this color picker, and you can just click anywhere on this color picker to choose your color, and it will automatically write the combination for that color here.
 
-## Display Types
+## The Splash Image
 Next up is the paint splash in the corner here.
 There is no spcecial effect or trick for this. It's just an image.
 
@@ -2688,6 +2693,151 @@ Let's give our image a class so we can easily make rules for it in CSS...
 
 Now the image will have a space to the left equal to 80% of our screen.
 I quite like that.
+
+## The Title
+Next up, we have the title up top.
+Let's make a simple div box to hold our text:
+
+	<div>Fast Food</div>
+
+Now, there are 4 things we need to change to it:
+The font size, its position (it should be centered), its color (cause it's white) and finally, the font..
+
+Let's start out with the font size and color.
+Pause the video, give it a class called title-fast-food and make it let's say 40 pixels and white.
+Pause the video now.
+
+	<div class="title-fast-food">Fast Food</div>
+
+	.title-fast-food {
+		font-size: 40px;
+		color: white;
+	}
+
+Next up, let's make it centered on the screen. Do you remember how to do that?
+Pause the video and do whatever it takes to center this text on the screen.
+Feel free to go back to the previous lesson.
+I'll give you a hint: you need to use display flex and justify-content center.
+Pause the video now.
+
+If you remember, to make something be in the middle of a box, you need to put it _inside_ another box.
+So let's do that
+
+	<div>
+		<div class="title-fast-food">Fast Food</div>
+	</div>
+
+Let's give it a class to use it in CSS:
+
+	<div class="title-box">
+		<div class="title-fast-food">Fast Food</div>
+	</div>
+
+	.title-box {
+		display: flex;
+		justify-content: center;
+	}
+
+Great!
+
+## Fonts
+There are a few fonts you can choose from that all browsers and computers have.
+Changing the font is easy: the most popular font is Arial.
+So, for our title-fast-food, we'll give it a rule for:
+
+	font-family: 'Arial';
+
+Notice that it's font-family, NOT font. Font-family. Why it's like that? Nobody know, that's just the way it is.
+
+Now, there are only a few fonts that work by default for everyone. And you can't memorize them.
+So, open up Google and type in "css web safe fonts".
+I want you to do this with me.
+
+Open the w3schools link and here, you will see several options for fonts.
+If you click on "Try it" for any of these fonts, it will take you to a page where you have the code for that font. Let's say, Courier New.
+What you do is you simply copy this and paste it in your code, and voila! You changed the font!
+
+Let's find one that looks similar to the one we need for our fast food. Arial was fine, but maybe... I think I like Trebuchet MS even more. So click on try it yourself...
+Copy this... and paste it in our code.
+Great! We're getting closer to our dream website!
+
+Next up, we have this subtitle here, called "Menu".
+Let's first make it in any font and then, later, we'll worry about the font.
+
+I want you to pause the video here and make this subtitle menu yourself, just like we made the fast food title [select the code]. It should be yellow, in the middle, and 30 pixels size.
+Try to write the code yourself, using the keyboard and don't copy-paste.
+Pause the video now.
+
+	<div class="title-box">
+		<div class="title-fast-food">Fast Food</div>
+	</div>
+
+The code is very very similar to our title's code.
+It should be fairly simple. Make sure your divs for the subtitle have a different class from your normal title, otherwise it's all gonna be messed up!
+
+[close other browser tabs]
+One last thing: notice how our subtitle menu here overlaps our fast food title? How do we do that?
+Well, remember how elements have have a margin-top and margin-bottom?
+What if I told you that the margins can be negative!? That's crazy, but it works!
+
+Here, let me show you:
+So, if I give this element a margin-top: 15px, it's going to be more down.
+However, if we give it a margin-top: of _-15px_, it's going to go up! It's weird, but it works just like you'd expect!
+That's pretty cool.
+
+Only one last thing remains to be done: changing the font family.
+Let's take a look online at the web safe fonts: we Google "css web safe fonts" and we go to w3schools. Take a look through these fonts... none of them looks like the one we need.
+So what do we do?
+Well, we'll have to download a font.
+We'll do that in the next episode!
+
+## Custom Fonts
+First things first: we need to find a good font that looks similar to what we need.
+Online, we can find tons of high quality free fonts that we can use on our website.
+
+Simply Google "free fonts".
+Personally, I like DaFont, but even if you're watching in 2045, you'll probably find a good website for free fonts.
+
+This website has so many fonts! Let's look for a good category of font. I feel like our font looks like a calligraphy font.
+Let's take a look... I feel like this one, Cream Cake, is pretty similar. So let's download it.
+
+It will download a zip file. If you're not familiar with zip files, you have to first extract it. A ZIP file is like a folder with extra steps. So right click on it > extract all. Click ok.
+
+Awesome, now we truly have our font.
+A downloaded font is just file that has OTF at the end. Alternatively, yours might be TTF or WOFF. They are all fine. Just take note of what the file ends with.
+
+Now, we right click on this and copy.
+Go to our website folder and paste it in there. Now our font file sits in the same folder as our website, so we can use it! Let's go back to the code.
+
+First things first: we need to CREATE the font family in CSS before we use it.
+Up here, at the very start of our style, type in like this:
+
+	@font-face {
+		font-family: (this will be the name we want to use in code, so let's say cream-cake)
+		src: url("") (and in quotes you type in exactly the name of this file, exactly as it is)
+			"Cream (SPACE) Cake.otf"
+	}
+
+Very important, it's an .OTF. Yours might be TTF or WOFF.
+Just to be clear, it should NOT be zip. If it's ZIP, you skipped a very important step, my man. Go back to the beginning of the video and watch it again.
+
+Phew, ok. That was something. Now, we can simply use our new font.
+For our menu subtitle here, we go:
+
+	font-family: "cream-cake";
+
+Lo and behold, we have a new font.
+
+I have a homework for you.
+You see, in our website image right here, [zoom in] I think the font is not Arial. I think it's something a bit thicker.
+So, go to a font website, like DaFont, and find a different font for our Fast Food title. Download that font, extract it, copy the font file to the website folder, create a new font like here [select] and give this cute title here the new font instead of Arial [select it].
+
+Feel free to try things out. Maybe you find a font that looks even better. Try it out, see how it goes. Do that, I'll be doing the same offscreen, and I'll see you in the next video!
+
+
+
+
+
 
 
 
@@ -2735,3 +2885,4 @@ Dollars to euro
 	- Improve this tree by adding a _parent_ field to Nodes; whenever you add a new node, each node knows its parent (`None` if it's the root node)
 	- Make a method `node.find_root()` for Node which finds the root node of the tree the node is in. For the example in the link, for node with number 6, this method will return the node with number 1.ital letter
 5. Really cool (optional) trick with strings (backticks)
+
