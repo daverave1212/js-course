@@ -3221,7 +3221,10 @@ That's honestly it!
 It's a really cool website!
 
 If you managed to get to this point in the course, seriously well done. You're on the right track and enormous props to you.
-Let me know in the comments or on our Discord group! I'd love to see what you think so far and how difficult it was!
+
+I NEED to congratulate you and tell you that the hard stuff has passed, and it will only get easier and easier from now on, especially when we start combining HTML and CSS with JavaScript!
+
+Let me know in the comments or on our Discord group what you think! Was it difficult? Was it easy? And feel free to let the others know you did it as well!
 
 In the next lesson, we'll look at how to make our website "responsive" and how to host it on the internet for free. There will be a project assignment too, which I really, really want you to do. It will be some
 
@@ -3230,6 +3233,7 @@ In the next lesson, we'll look at how to make our website "responsive" and how t
 ## Responsive CSS
 ## Hosting The Website
 ## Things You'll See Online
+## Animations
 ## FAQ
 ## Project Assignment (choose one of 5 websites)
 
