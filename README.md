@@ -2262,6 +2262,7 @@ There are other random tags, some of which you will use, others you will never u
 The next lesson is the final lesson of HTML, and I will show you a couple things you should know about HTML, very simple as well.
 
 ## HTML Page Structure and Other Garbage
+[Make sure you align the price properly]
 In this lesson, I will show you some extra HTML tags that you might see online, but they are not needed. It's just so you know what's up when you see them.
 
 First off, you might see this thing at the start of the HTML code: `<!DOCTYPE html>`. Back in the day 50 years ago, this used to tell browsers it's an HTML page and not something else. You do not need to put it anywhere, and if you see it, just know it's there to support internet explorer from Windows 98.
@@ -2680,6 +2681,8 @@ There is no spcecial effect or trick for this. It's just an image.
 So we're going to go to Google, find an image of a paint splash and download it and put it in our website folder with the name splash.png.
 Make sure it has a transparent background.
 An image can only have a transparent background if it's a PNG. JPEG, WEBP, GIF these can't have transparency.
+When you're downloading the image, if it appears to have a white background and then you click on it and it has these squares, then it means the background is transparent.
+Just be careful because a lot of images online are PNG but don't actually have a transparent background, even if they have these squares. If your image doesn't have transparent background, try downloading more images and see which one truly has transparent background.
 
 How do we put it in the upper-right corner here? Try to guess.
 We use something we've already learned.
@@ -2836,13 +2839,407 @@ Feel free to try things out. Maybe you find a font that looks even better. Try i
 
 
 
+## The Menu Items
+[Prepare Paint to show boxes]
+Next up is the 6 items on the menu, with pictures, text, stars and a price.
+
+Whenever you're building a website from an image, I want you to think in terms of boxes.
+Again, everything is a box. Your website is just boxes inside boxes inside boxes.
+And pretty much all we need to do is apply the techniques we have learned so far.
+
+Let's think about the structure of our HTML for this part.
+We have 2 rows, which means 2 boxes.
+Each row box has 3 boxes inside, see?
+And inside each of the 3 boxes, there's an image, another box with text for the name, another box underneath it with stars and another box with the price.
+That's a lot of boxes, but we'll take them one by one. The code for all the white boxes will be almost exactly the same, except for you know, the images, text, price, etc.
+
+[Show Folder]
+To start up, here's my website folder. I have a folder here called `images` inside which, I have 6 images, each for a different food.
+
+[Show Code]
+Now, I want you to create the first row, the first 3 items in our menu.
+You will need to create a box to hold them and center them, and create 3 more boxes inside, each with an image.
+I want you to pause the video here and try to create the structure for the 3 first items yourself. It's a more complex task, but you can do it using only things that we have learned so far.
+Just try. If you don't manage to do it, come back to the video and follow what I do and then try to do the rest in advance. Whenever you feel like you can do it on your own, pause the video and do it.
+Pause the video now.
+
+First, we need a box to hold the 3 boxes.
+
+	<div [we'll call it row-box] class="row-box">
+
+	</div>
+
+Inside it, there are 3 boxes: so, we make 3 boxes.
+
+	<div class="row-box">
+		<div [we'll call these white-box] class="white-box"></div>
+		<div class="white-box"></div>
+		<div class="white-box"></div>
+	</div>
+
+If we press control + S to save and refresh the page, we don't see any of the boxes, because they have nothing inside.
+First off, we want the 3 boxes to be white and be about 200px wide and 300px tall.
+Pause the video now and make them so.
+
+	.white-box {
+		background-color: white;
+		width: 200px;
+		height: 300px;
+	}
+
+But they're not all on the same row.
+Do you remember how to make multiple boxes on the same row?
+Pause the video now and see if you remember how to do it.
+
+We need to make the big box, the row box, flex:
+	
+	.row-box {
+		display: flex;
+	}
+
+We also want them to be aligned on the middle of the page.
+Remember how we do that?
+Pause the video and try to align them on the middle.
+Pause the video now.
+
+To have some boxes centered inside another box, we simply add to the big box display flex and justify content center. Our box already has display flex, so we just use justify content center.
+
+	justify-content: center;
+
+They are a bit too close together, so let's give them a gap, about 20px:
+
+	gap: 20px;
+
+They must also have rounded corners, so let's do that:
+
+	border-radius: 25px;
+
+It's starting to look a lot more like what we need.
+Let's add the images:
+
+	<img [we'll call them menu-item-image]...>
+
+Now, the images are really a wrong size. So, let's set the size of each image.
+Since each white box is 300px wide and 500px tall, let's make the image 280px wide and 300px tall.
+We're simply approximating right now. There's no correct solution, really. If you want to be exact, I suppose you can measure exactly how many pixels there are here, but let's just approximate for now.
+
+	width: 180px;
+	height: 200px;
+	[We should also make the borders of the images round] border-radius: 25px;
+
+Nice! The images look a bit distorted, though. You can either fix this by editing the images in something like adobe photoshop or paint, but we can also fix it with code. However, we'll take care of that later.
+
+[Have website image opened]
+Next, our images are on the left, but you see that in this image, there's a small white space here.
+Remember how to add space? We can use either margin for the image, or padding for the white box.
+
+[Paint open with the image of our current WIP website]
+Now let's do some quick maths:
+Our white box is 200px wide. Our image is 180px wide.
+200px - 180px = 20px
+So, we need a total of 20px space. Which means 10px on the left and 10px on the right.
+Since boxes are always on the left side, we only need to add a margin-left to the image:
+
+	margin-left: 10px;
+
+Control + S to save, refresh the page with F5 and... it looks great!
+We also need to add a margin top to the images.
+Pause the video now and do it.
+
+	margin-top: 10px;
+
+This looks freaking awesome! We're getting there!
+
+Now, for each menu item, let's add its name.
+Do that on your own - pause the video now.
+
+It's very simple: all we need to add is a div:
+
+	<div [we'll call it menu-item-name] class="menu-item-name">Big Burger</div>
+
+Put this in the other divs as well. Let's see what it looks like.
+It's a bit small and the font should probably be the same as our title font, here.
+Pause the video now and do it.
+
+	font-size: 16px;
+	font-family: "title-font";
+	[and we make it more to the right by giving it either padding or margin; let's give it a padding this time, just to practice it] padding-left: 10px;
+	padding-top: 10px;
+
+I think 10px is not enough. Let's make it 15px.
+Save and refresh.
+Looks better now.
+
+You see, it's all a process of trial and error. You try a margin, just by approximating, then you make it smaller or larger, depending on how it is.
+
+Next up, this one might look tricky, but honestly, it's just the same thing we've done so far.
+We simply have 2 boxes: one for stars, and one for the price, one after another.
+We just make 2 boxes with some thing inside, and, if we want to have them on the same line, do you remember how we do it? [pause] If you said display flex, you're right!
+
+	[we'll call it...]
+	<div class="menu-item-bottom-box">
+
+	</div>
+
+Inside, we have 2 boxes: one on the left with stars and one on the right with prices:
+
+	<div class="menu-item-bottom-box">
+		<div class="stars-box">
+		
+		</div>
+		<div class="price-box"></div>
+	</div>
+
+Let's write the CSS for this to start with:
+
+	.menu-item-bottom-box {
+		display: flex;
+	}
+
+Now, you might be wondering: Dave, how the hell do we make those stars?
+The obvious answer is... they're all just images. We can go to google, find a small star image and put it there. Yes, you'll have 5 images one after another. It's not pretty, but what can you do.
+I want you to do that: go to Google, find an image of a star and put it here 5 times. You will need to copy and paste the same thing.
+Pause the video now.
+
+	<div class="menu-item-bottom-box">
+		<div class="stars-box">
+			<img src="images/star.png">
+			<img src="images/star.png">
+			<img src="images/star.png">
+			<img src="images/star.png">
+			<img src="images/star.png">
+		</div>
+		<div class="price-box"></div>
+	</div>
+
+It's quite ugly, but hey what can you do.
+Let's give it a class to make it small with CSS.
+Let me show you a trick: You can put your cursor here, press and hold the mousewheel of your mouse, and drag down to literally write on multiple lines.
+
+	<div class="menu-item-bottom-box">
+		<div class="stars-box">
+			<img class="star" src="images/star.png">
+			<img class="star" src="images/star.png">
+			<img class="star" src="images/star.png">
+			<img class="star" src="images/star.png">
+			<img class="star" src="images/star.png">
+		</div>
+		<div class="price-box"></div>
+	</div>
+
+	.star {
+		width: 20px;
+		height: 20px;
+	}
+
+Awesome. Finally, let's write something in the price box too:
+
+	<div class="menu-item-bottom-box">
+		<div class="stars-box">
+			<img class="star" src="images/star.png">
+			<img class="star" src="images/star.png">
+			<img class="star" src="images/star.png">
+			<img class="star" src="images/star.png">
+			<img class="star" src="images/star.png">
+		</div>
+		<div class="price-box">$12</div>
+	</div>
+
+The right part is still not well aligned.
+Let's give it a margin and a proper font...
+
+Perfect! Now, we take this and we copy it and paste it to the other white boxes.
+Ahh, look at that! Our website is coming together really really well!
+
+Finally, the last thing we need to do is make the second row of our menu items.
+We select alllll of this and we copy it and paste it right underneath. The CSS is the same, so no need to add anything to the CSS.
+
+Looks great! Only one small part remains to be done for our website - this bottom part.
+But before we do that, we should fix these images being stretched like that, cause they're quite ugly like that.
+
+See you in the next video!
+
+## Image Fitting
+Our images look quite off, but luckily it's very easy to fix.
+You can use this magical CSS rule:
+
+On your image in CSS, give it another rule called object-fit: cover;
+Save, refresh with F5 and now we can see our images are automatically cropped to fit the width and height we gave them.
+
+That's it. In the lesson, we'll start the bottom part of our page.
+
+## The Bottom Side
+[Show the image in paint]
+We'll now start working on this side of the page.
+You can try to do it on your own, but you'll need a few new CSS rules.
+However, you can think of how you do it.
+
+When building a website, always, always think in terms of boxes. And the more boxes, the better!
+So let's look at this side of the page: it's all a big box.
+This left side is another box. This right side is another box.
+On the right side, there are 2 boxes. And each box is also split into 2 more boxes.
+
+[code]
+Let's first create the layout that we want.
+
+	<div class="bottom-big-box">
+		<div class="bottom-left-box"></div>
+		<div class="bottom-right-box"></div>
+	</div>
+
+We want them to be on the same line, so let's give the big box a display flex:
+
+	.bottom-big-box {
+		display: flex;
+	}
+
+We also see that the left box is roughtly the same width as the right box.
+We can force them to be the same, exactly half of our big box:
+
+	.bottom-left-box {
+		width: 50%;
+	}
+	.bottom-right-box {
+		width: 50%;
+	}
+
+We don't have anything inside the boxes, so they don't appear.
+I think the big box should also have a height of about 450px;
+
+	height: 450px;
+
+The image is cut away on the left and bottom, so it might be tricky. Let's do it in the next lesson.
+
+## Cropping/Cutting Boxes
+
+For the image, we'll Google food on plate image png. Make the image is a PNG, not JPEG, not GIF, only PNG. Because ONLY PNG has transparency.
+
+[Show folder]
+I found this image, I put it in my images folder in my website folder, and now let's add it to the page code, on the left side.
+
+[Show page image]
+
+	<img class="plate-image" src="plate.png">
+
+Notice how this one looks cut here? It goes out of the page. Let's do that ourselves.
+Since our big box is 450px high, we should make our plate taller than that.
+Let's say 750px;
+We should also make it wide: 900px;
+
+	height 750px;
+	width: 900px;
+
+Save and refresh. But oh no! What's happening! The image is larger than its box!
+We could do the same as we did with our menu items and give them an [write it] object-fit: cover, but it won't look nice at all. It won't be cropped properly. [and delete it after]
+Don't worry, we can make the box say "nope, if something doesn't fit this box, crop it".
+We can go to the box on the left and say:
+
+	overflow: hidden;
+
+This makes it so that if the contents of the box are too big for the box, they will simply be cut.
+Now our image looks much better. But it's too much to the right. Do you remember what we can do to make it more to the left?
+Pause the video and make it more to the left.
+Pause the video now.
+
+	margin-left: -300px;
+
+Aha! Now it looks great!
+
+Last thing we need to do is make the part on the right and the project will be finished!
 
 
+## Align Right
+[Paint]
+Let's take a look at the bottom right side: it has 2 boxes...
+Each of those 2 boxes has 2 boxe boxes inside...
+
+The easiest way to do this is to give this first box a margin-top, and give this big box a padding-right.
+You'll need to find some images for the phone and the internet on google.
+Can you do that?
+Pause the video and try to do it... now.
+
+Let's do just that:
+[code + image]
+
+	<div class="phone-big-box">
+		<div class="text-side">+123-456-7890</div>
+		<div class="icon-side"><img src="images/phone.png"></div>	[I found this image for a phone online]
+	</div>
+	<div class="site-big-box">
+		<div class="text-side">www.reallygreatsite.com</div>
+		<div class="icon-side"><img src="images/internet.png"></div>	[this one is from google as well]
+	</div>
+
+This box and this box are very similar, so is this one and this one.
+I think we can have the same class on both of them.
+
+(Save + Refresh)
+
+
+	.bottom-right-box {
+		padding-right: 100px;
+	}
+
+	.phone-big-box {
+		margin-top 100px;
+	}
+
+Next, we want to align these boxes [show] and these ones [show] on the same line.
+We do that with... try to guess... display flex!
+
+	.phone-big-box {
+		display: flex;
+	}
+	.site-big-box {
+		display: flex;
+	}
+
+So far so good.
+But how do we make them aligned to the right?
+One way to do it is to give them a margin-left, but that can be weird.
+The easiest way is to just align them to the right with a special trick.
+
+Remember how you can center things inside a box with justify content center?
+Well, outside of justify content center, there are also justify content right and justify content left!
+Let's try those things!
+
+	.phone-big-box {
+		display: flex;
+		justify-content: right;
+	}
+	.site-big-box {
+		display: flex;
+		justify-content: right;
+	}
+
+This makes it so that the content is aligned to the right side!
+Let's also make the images the same size...
+
+Perfect!
+
+That's honestly it!
+It's a really cool website!
+
+If you managed to get to this point in the course, seriously well done. You're on the right track and enormous props to you.
+Let me know in the comments or on our Discord group! I'd love to see what you think so far and how difficult it was!
+
+In the next lesson, we'll look at how to make our website "responsive" and how to host it on the internet for free. There will be a project assignment too, which I really, really want you to do. It will be some
+
+# CSS: Important Tips
+## Key Takeaway
+## Responsive CSS
+## Hosting The Website
+## Things You'll See Online
+## FAQ
+## Project Assignment (choose one of 5 websites)
 
 
 
 
 Googling... (w3schools mostly)
+Iterative process... fail... trial and error
+Refresh the page by clicking on this button or pressing F5.
+Learn by examples...
 
 
 ## If it doesn't work...
