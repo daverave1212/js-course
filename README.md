@@ -3230,8 +3230,156 @@ In the next lesson, we'll look at how to make our website "responsive" and how t
 
 # CSS: Important Tips
 ## Key Takeaway
+In the upcoming part of our CSS course, I will give you some quick CSS tips.
+These will be quite fast and simple, but I hope they will be useful for you.
+
+So, the key takeaway is the following: everything is a box!
+[On our website, with inspect]
+When you're making a website, think in terms of boxes. Separate parts of your website into boxes. And generally, boxes are either one under another, or on the same line.
+
+There are two very important concepts I want you to remember: Display flex and width and height. You remember these, you can do anything!
+
+Boxes, boxes, boxes!
+Whenver you have a website from an image or something similar, delimit them into boxes. Each part of text is a box. Each image is a box, everything is a box.
+Boxes!
+
+
+## Inline CSS
+So far we learned that the way you can make CSS rules only for one element is by giving it a class and writing that CSS code only for that class.
+
+There's actually one more way to do it, it's very simple, and that's with the `style` property directly on the HTML element.
+
+Let's say we have a div box:
+
+	<div>
+		Hello World
+	</div>
+
+[have the style in Ctrl + V to paste it fast]
+Let's say we want this div box to have white text over a red background.
+Normally, you would give it a class and make a style for it with color: white and background-color: red.
+
+[delete the style tag]
+Instead, you can give the div a `style` property:
+
+	style=""
+
+And inside these double quotes, you can write CSS rules:
+
+	style="color: white; background-color: red;"
+
+Remember that spaces and new lines don't really matter. So you can write multiple things on the same lines.
+
+But frankly, this sucks. Don't do this. There is only ONE reason to do this, and that's when you use JavaScript later on.
+I just wanted to show you that this is possible, but don't do it like this, ever!
+
+
+## Position Absolute and Z-Index
+I want us to add one more thing to our website. You see that one small detail is missing: these blobs of color right here.
+In this lesson, we will add those.
+Can you guess what element they will be?
+
+That's right - they're images. No trick attached, just images.
+[Show folder]
+So I went online and I found on google this cute image of a brown blob.
+As always, I put it in my images folder and it's called blob.png.
+
+You might be thinking: great, we have this image, but it's behing things, it's absolutely impossible to add it without changing all our website!
+Well, there's one easy way to add them: position absolute.
+
+When an element has position absolute, it will not interact with the rest of the page. It will kind of float on its own.
+Let's find a suitable place for it and pay close attention:
+
+The first blob will be just between our title and the menu items.
+So, let's create our image here:
+
+	<img [...] class="blob-1" src="images/blob.png">
+
+If we want this blob image to not care about alignment and boxes on our page, we need to give it a position absolute.
+
+	.blob-1 {
+		position: absolute;
+	}
+
+And look at that! It's now exactly where we put it, but it does not care about boxes.
+But it's covering parts of or website! Oh no!
+We can easily fix that by giving it a z-index.
+
+When you set the z-index of an element, you're essentially telling it that it's closer or father away from the screen.
+
+	z-index: -420;
+
+ALL elements by default have a z-index of 0. The larger the Z-index is, the more in FRONT it is. The Lower z-index, the further BACK it is.
+Front-high z-index. Back-low.
+Pretty easy to remember.
+
+Let's also put it more to the left and down:
+
+	margin-left: -100px;
+	margin-top: 50px;
+
+For the next blob, this one down here, I want you to do the same thing.
+Make another blob, give it another class, and put it down here.
+
+Good luck!
+
+## Position Absolute WARNING
+There's a couple caveats to position absolute.
+Sure, it seems to work fine now, but you might encounter some problems.
+
+The first thing is you position absolute element SHOULD be inside a box with position relative.
+
+In our case, the parent box of our blob is just body.
+
+[Our body already has position relative].
+If we were to put this blob inside, say, this white box, it might no longer work.
+To fix that, we would simply give our white boxes a
+
+	position: relative;
+
+And now it's going to work.
+
+Why is it like this? Repeat after me: nobody know. CSS is old and it's pretty stupid at times.
+Sometimes, there's just no explanation for things. You can find explanations online, but trust me, there's really no explanation. That's just the way things are.
+
+Also, you might also want to use directly things like left and top instead of margin-left and margin-top:
+
+	left: 50px
+	top: 100px;
+
+If your position absolute element ever is misaligned, check these 2 things:
+1. Check that it's parent box has position relative and
+2. Try using left and top instead of margin-left and margin-top.
+
+You have been warned.
+
 ## Responsive CSS
+If you've been online for a while or googled CSS things, you probably heard of responsive CSS. Or responsive websites.
+
+When your website is _responsive_, it means that it looks good on all devices and all screen sizes.
+For example, our website is NOT responsive. If I shrink the browser too much, it's going to look absolutely wrong.
+
+Making a website responsive is frankly not very difficult.
+All we need to do is, instead of thinking in pixels, we need to think in percentages:
+
+Let's do just that!
+
+We'll start off with our menu items, beacuse that's the easiest thing to do.
+Our white boxes each occupies a percentage of our page's width.
+What percentage do you think it covers?
+I think maybe 10% to 15%.
+
+So, instead of width: 200px here, let's say width: 15%.
+What this does is it says this box will always be 15% of the width of its parent box.
+It's parent box doesn't have a width. For good measure, we can also make sure that the parent box is always 100% of the screen width.
+
+Now let's save and refresh the page and we'll see that the boxes become thinner and thinner the more we squeeze our page.
+Fantastic!
+
+Now how do we also make them be smaller?
+
 ## Hosting The Website
+## Designing A Website
 ## Things You'll See Online
 ## Animations
 ## FAQ
@@ -3240,6 +3388,7 @@ In the next lesson, we'll look at how to make our website "responsive" and how t
 
 
 
+CSS spaces and new lines
 Googling... (w3schools mostly)
 Iterative process... fail... trial and error
 Refresh the page by clicking on this button or pressing F5.
